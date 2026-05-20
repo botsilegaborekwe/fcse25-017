@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Place your order online at Coffee Shop. Choose from our menu, specify details, and enjoy fast delivery of your favorite coffee and treats." />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <title>Order Coffee</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Navbar (simple) -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Kalahari Café Logo" class="logo" />
+        <h2 class="logo-text">Kalahari Café</h2>
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item nav-dropdown">
+          <a href="menu.html" class="nav-link dropdown-toggle">Menu</a>
+          <ul class="dropdown-menu">
+            <li><a href="menu.html" class="dropdown-link">Menu Items</a></li>
+            <li><a href="gallery.html" class="dropdown-link">Gallery</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="feedback.html" class="nav-link">Feedback</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="order.html" class="order-btn active">Order Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Order Section -->
+  <section class="order-section">
+    <div class="section-content">
+      <h2 class="section-title">Place Your Order</h2>
+
+      <form class="order-form" id="order-form" action="#">
+
+        <div class="form-group">
+          <label for="customer-name">Full Name</label>
+          <input id="customer-name" name="customerName" type="text" placeholder="Enter your name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="customer-phone">Phone Number</label>
+          <input id="customer-phone" name="customerPhone" type="tel" placeholder="Enter your phone number" required />
+        </div>
+
+        <div class="form-group">
+          <label for="coffee-item">Select Item</label>
+          <select id="coffee-item" name="coffeeItem" required>
+            <option value="">Choose coffee</option>
+            <option value="Espresso">Espresso</option>
+            <option value="Cappuccino">Cappuccino</option>
+            <option value="Latte">Latte</option>
+            <option value="Americano">Americano</option>
+            <option value="Mocha">Mocha</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="coffee-quantity">Quantity</label>
+          <input id="coffee-quantity" name="coffeeQuantity" type="number" min="1" value="1" required />
+        </div>
+
+        <div class="form-group">
+          <label for="delivery-address">Delivery Address</label>
+          <textarea id="delivery-address" name="deliveryAddress" placeholder="Enter your address" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="payment-method">Payment Method</label>
+          <select id="payment-method" name="paymentMethod" required>
+            <option value="">Select payment</option>
+            <option value="Cash on Delivery">Cash on Delivery</option>
+            <option value="Card">Card</option>
+            <option value="Mobile Money">Mobile Money</option>
+          </select>
+        </div>
+
+        <button type="submit" class="submit-button">Place Order</button>
+        <div id="order-message" class="order-message" aria-live="polite"></div>
+
+      </form>
+    </div>
+  </section>
+
+<script>
+  document.getElementById('order-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('customer-name').value.trim();
+    const phone = document.getElementById('customer-phone').value.trim();
+    const item = document.getElementById('coffee-item').value;
+    const quantity = document.getElementById('coffee-quantity').value;
+    const address = document.getElementById('delivery-address').value.trim();
+    const paymentMethod = document.getElementById('payment-method').value;
+    const messageElement = document.getElementById('order-message');
+
+    if (!name || !phone || !item || !quantity || !address || !paymentMethod) {
+      messageElement.textContent = 'Please fill in all fields.';
+      messageElement.style.display = 'block';
+      return;
+    }
+
+    if (quantity < 1) {
+      messageElement.textContent = 'Quantity must be at least 1.';
+      messageElement.style.display = 'block';
+      return;
+    }
+
+    messageElement.textContent = `Thank you, ${name}! Your order for ${quantity} ${item}${quantity !== '1' ? 's' : ''} is confirmed. We will contact you shortly at ${phone} to arrange delivery to ${address} using ${paymentMethod}.`;
+    messageElement.style.display = 'block';
+    this.reset();
+  });
+</script>
+
+<a href="https://wa.me/1234567890?text=Hello%20from%20Coffee%20Website" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>

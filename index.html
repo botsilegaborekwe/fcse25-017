@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Welcome to Kalahari Café, your go-to place for premium coffee, delicious treats, and a cozy atmosphere. Explore our menu, read testimonials, and place your order online." />  <link rel="icon" href="images/logo.png" type="image/png" />    <title>Kalahari Café</title>
+    <!-- Linking Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <!-- Linking Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header / Navbar -->
+    <header>
+      
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Kalahari Café Logo" class="logo">
+      <h2 class="logo-text">Kalahari Café</h2>
+    </a>
+
+    <ul class="nav-menu">
+      <button id="menu-close-button" class="fas fa-times"></button>
+
+      <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item nav-dropdown">
+        <a href="menu.html" class="nav-link dropdown-toggle">Menu</a>
+        <ul class="dropdown-menu">
+          <li><a href="menu.html" class="dropdown-link">Menu Items</a></li>
+          <li><a href="gallery.html" class="dropdown-link">Gallery</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="feedback.html" class="nav-link">Feedback</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      <li class="nav-item"><a href="order.html" class="order-btn">Order Now</a></li>
+    </ul>
+
+    <button id="menu-open-button" class="fas fa-bars"></button>
+  </nav>
+</header>
+    <main>
+      <!-- Hero section -->
+      <section class="hero-section">
+        <div class="section-content">
+          <div class="hero-details">
+            <h2 class="title">Best Coffee</h2>
+            <h3 class="subtitle">Make your day great with our special coffee!</h3>
+            <p class="description">Welcome to our coffee paradise, where every bean tells a story and every cup sparks joy.</p>
+            <div class="buttons">
+              <a href="order.html" class="button order-now">Order Now</a>
+              <a href="contact.html" class="button contact-us">Contact Us</a>
+            </div>
+          </div>
+          <div class="hero-image-wrapper">
+            <img src="images/coffee-hero-section.png" alt="Coffee" class="hero-image" />
+          </div>
+        </div>
+      </section>
+     
+      <button id="testimonials-toggle" class="testimonials-toggle">View Testimonials</button>
+
+            <!-- Testimonials section -->
+      <section class="testimonials-section" id="testimonials">
+        <h2 class="section-title">Testimonials</h2>
+        <div class="section-content">
+          <div class="slider-container swiper">
+            <div class="swiper-wrapper">
+              <div class="testimonial swiper-slide">
+                <img src="images/user-1.jpg" alt="User" class="user-image" />
+                <h3 class="name">Sarah Johnson</h3>
+                <p class="feedback">"Loved the French roast. Perfectly balanced and rich. Will order again!"</p>
+              </div>
+              <div class="testimonial swiper-slide">
+                <img src="images/user-2.jpg" alt="User" class="user-image" />
+                <h3 class="name">James Wilson</h3>
+                <p class="feedback">"Great espresso blend! Smooth and bold flavor. Fast shipping too!"</p>
+              </div>
+              <div class="testimonial swiper-slide">
+                <img src="images/user-3.jpg" alt="User" class="user-image" />
+                <h3 class="name">Michael Brown</h3>
+                <p class="feedback">"Fantastic mocha flavor. Fresh and aromatic. Quick shipping!"</p>
+              </div>
+              <div class="testimonial swiper-slide">
+                <img src="images/user-4.jpg" alt="User" class="user-image" />
+                <h3 class="name">Emily Harris</h3>
+                <p class="feedback">"Excellent quality! Fresh beans and quick delivery. Highly recommend."</p>
+              </div>
+              <div class="testimonial swiper-slide">
+                <img src="images/user-5.jpg" alt="User" class="user-image" />
+                <h3 class="name">Anthony Thompson</h3>
+                <p class="feedback">"Best decaf I've tried! Smooth and flavorful. Arrived promptly."</p>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </section>
+     
+          <!-- Footer section -->
+      <footer class="footer-section">
+        <div class="section-content">
+          <p class="copyright-text">© 2026 Kalahari Café</p>
+          <div class="social-link-list">
+            <a href="https://www.facebook.com/randy.popota" target="_blank" rel="noreferrer noopener" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/sir_gaborekwe/" target="_blank" rel="noreferrer noopener" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/BGaborekwe36952" target="_blank" rel="noreferrer noopener" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+          <p class="policy-text">
+            <a href="#" class="policy-link" data-policy="privacy">Privacy policy</a>
+            <span class="separator">•</span>
+            <a href="#" class="policy-link" data-policy="refund">Refund policy</a>
+          </p>
+        </div>
+      </footer>
+    </main>
+    <!-- Linking Swiper script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Linking custom script -->
+    <script src="script.js"></script>
+
+    <a href="https://wa.me/1234567890?text=Hello%20from%20Kalahari%20Café" class="whatsapp-float" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+  </body>
+</html>
