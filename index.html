@@ -3,43 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Welcome to Kalahari Café, your go-to place for premium coffee, delicious treats, and a cozy atmosphere. Explore our menu, read testimonials, and place your order online." />  <link rel="icon" href="images/logo.png" type="image/png" />    <title>Kalahari Café</title>
-    <!-- Linking Font Awesome for icons -->
+    <meta name="description" content="Welcome to Kalahari Café, your go-to place for premium coffee, delicious treats, and a cozy atmosphere. Explore our menu, read testimonials, and place your order online." />
+    <link rel="icon" href="images/logo.png" type="image/png" />
+    <title>Kalahari Café</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <!-- Linking Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Header / Navbar -->
     <header>
-      
-  <nav class="navbar">
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="Kalahari Café Logo" class="logo">
-      <h2 class="logo-text">Kalahari Café</h2>
-    </a>
+      <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+          <img src="images/logo.png" alt="Kalahari Café Logo" class="logo" width="45" height="45">
+          <h2 class="logo-text">Kalahari Café</h2>
+        </a>
 
-    <ul class="nav-menu">
-      <button id="menu-close-button" class="fas fa-times"></button>
+        <ul class="nav-menu">
+          <button id="menu-close-button" class="fas fa-times"></button>
 
-      <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-      <li class="nav-item nav-dropdown">
-        <a href="menu.html" class="nav-link dropdown-toggle">Menu</a>
-        <ul class="dropdown-menu">
-          <li><a href="menu.html" class="dropdown-link">Menu Items</a></li>
-          <li><a href="gallery.html" class="dropdown-link">Gallery</a></li>
+          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item nav-dropdown">
+            <a href="menu.html" class="nav-link dropdown-toggle">Menu</a>
+            <ul class="dropdown-menu">
+              <li><a href="menu.html" class="dropdown-link">Menu Items</a></li>
+              <li><a href="gallery.html" class="dropdown-link">Gallery</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="feedback.html" class="nav-link">Feedback</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="order.html" class="order-btn">Order Now</a></li>
         </ul>
-      </li>
-      <li class="nav-item"><a href="feedback.html" class="nav-link">Feedback</a></li>
-      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-      <li class="nav-item"><a href="order.html" class="order-btn">Order Now</a></li>
-    </ul>
 
-    <button id="menu-open-button" class="fas fa-bars"></button>
-  </nav>
-</header>
+        <button id="menu-open-button" class="fas fa-bars"></button>
+      </nav>
+    </header>
+
     <main>
       <!-- Hero section -->
       <section class="hero-section">
@@ -54,41 +55,41 @@
             </div>
           </div>
           <div class="hero-image-wrapper">
-            <img src="images/coffee-hero-section.png" alt="Coffee" class="hero-image" />
+            <img src="images/coffee-hero-section.png" alt="A steaming cup of Kalahari Café coffee" class="hero-image" width="500" height="500" />
           </div>
         </div>
       </section>
-     
+
       <button id="testimonials-toggle" class="testimonials-toggle">View Testimonials</button>
 
-            <!-- Testimonials section -->
+      <!-- Testimonials section -->
       <section class="testimonials-section" id="testimonials">
         <h2 class="section-title">Testimonials</h2>
         <div class="section-content">
           <div class="slider-container swiper">
             <div class="swiper-wrapper">
               <div class="testimonial swiper-slide">
-                <img src="images/user-1.jpg" alt="User" class="user-image" />
+                <img src="images/user-1.jpg" alt="Sarah Johnson" class="user-image" width="180" height="180" />
                 <h3 class="name">Sarah Johnson</h3>
                 <p class="feedback">"Loved the French roast. Perfectly balanced and rich. Will order again!"</p>
               </div>
               <div class="testimonial swiper-slide">
-                <img src="images/user-2.jpg" alt="User" class="user-image" />
+                <img src="images/user-2.jpg" alt="James Wilson" class="user-image" width="180" height="180" />
                 <h3 class="name">James Wilson</h3>
                 <p class="feedback">"Great espresso blend! Smooth and bold flavor. Fast shipping too!"</p>
               </div>
               <div class="testimonial swiper-slide">
-                <img src="images/user-3.jpg" alt="User" class="user-image" />
+                <img src="images/user-3.jpg" alt="Michael Brown" class="user-image" width="180" height="180" />
                 <h3 class="name">Michael Brown</h3>
                 <p class="feedback">"Fantastic mocha flavor. Fresh and aromatic. Quick shipping!"</p>
               </div>
               <div class="testimonial swiper-slide">
-                <img src="images/user-4.jpg" alt="User" class="user-image" />
+                <img src="images/user-4.jpg" alt="Emily Harris" class="user-image" width="180" height="180" />
                 <h3 class="name">Emily Harris</h3>
                 <p class="feedback">"Excellent quality! Fresh beans and quick delivery. Highly recommend."</p>
               </div>
               <div class="testimonial swiper-slide">
-                <img src="images/user-5.jpg" alt="User" class="user-image" />
+                <img src="images/user-5.jpg" alt="Anthony Thompson" class="user-image" width="180" height="180" />
                 <h3 class="name">Anthony Thompson</h3>
                 <p class="feedback">"Best decaf I've tried! Smooth and flavorful. Arrived promptly."</p>
               </div>
@@ -99,8 +100,7 @@
           </div>
         </div>
       </section>
-     
-          <!-- Footer section -->
+
       <footer class="footer-section">
         <div class="section-content">
           <p class="copyright-text">© 2026 Kalahari Café</p>
@@ -117,12 +117,12 @@
         </div>
       </footer>
     </main>
-    <!-- Linking Swiper script -->
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Linking custom script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 
-    <a href="https://wa.me/1234567890?text=Hello%20from%20Kalahari%20Café" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/26778055268?text=Hello%20from%20Kalahari%20Café" class="whatsapp-float" target="_blank">
       <i class="fab fa-whatsapp"></i>
     </a>
 
