@@ -9,6 +9,8 @@
 
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
 </head>
 
 <body>
@@ -16,11 +18,12 @@
   <header>
     <nav class="navbar">
       <a href="index.html" class="nav-logo">
-        <img src="images/logo.png" alt="Kalahari Café Logo" class="logo">
+        <img src="images/logo.png" alt="Kalahari Café Logo" class="logo" width="45" height="45">
         <h2 class="logo-text">Kalahari Café</h2>
       </a>
 
       <ul class="nav-menu">
+        <button id="menu-close-button" class="fas fa-times"></button>
         <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
         <li class="nav-item nav-dropdown">
@@ -45,40 +48,107 @@
       <h2 class="section-title">Customer Feedback</h2>
       <p class="section-subtitle">We'd love to hear from you! Please share your feedback below.</p>
 
-      <form class="feedback-form">
+      <form class="feedback-form" id="feedback-form" novalidate>
         <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" placeholder="Enter your name" required />
+          <label for="fb-name">Full Name</label>
+          <input type="text" id="fb-name" placeholder="Enter your name" required />
+          <span class="feedback-error" id="fb-name-error" style="color:#c0392b; font-size:0.85rem; display:none;">Please enter your full name.</span>
         </div>
 
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" required />
+          <label for="fb-email">Email</label>
+          <input type="email" id="fb-email" placeholder="Enter your email" required />
+          <span class="feedback-error" id="fb-email-error" style="color:#c0392b; font-size:0.85rem; display:none;">Please enter a valid email address.</span>
         </div>
 
         <div class="form-group">
-          <label for="rating">Rate Us</label>
-          <select id="rating" required>
+          <label for="fb-rating">Rate Us</label>
+          <select id="fb-rating" required>
             <option value="">Select Rating</option>
-            <option>⭐⭐⭐⭐⭐ Excellent</option>
-            <option>⭐⭐⭐⭐ Very Good</option>
-            <option>⭐⭐⭐ Good</option>
-            <option>⭐⭐ Fair</option>
-            <option>⭐ Poor</option>
+            <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+            <option value="4">⭐⭐⭐⭐ Very Good</option>
+            <option value="3">⭐⭐⭐ Good</option>
+            <option value="2">⭐⭐ Fair</option>
+            <option value="1">⭐ Poor</option>
           </select>
+          <span class="feedback-error" id="fb-rating-error" style="color:#c0392b; font-size:0.85rem; display:none;">Please select a rating.</span>
         </div>
 
         <div class="form-group">
-          <label for="message">Your Feedback</label>
-          <textarea id="message" rows="5" placeholder="Write your feedback..." required></textarea>
+          <label for="fb-message">Your Feedback</label>
+          <textarea id="fb-message" rows="5" placeholder="Write your feedback..." required></textarea>
+          <span class="feedback-error" id="fb-message-error" style="color:#c0392b; font-size:0.85rem; display:none;">Please write your feedback.</span>
         </div>
+
+        <div id="fb-response" style="display:none; margin-bottom:16px; padding:14px 16px; border-radius:8px; background:#fff7e9; color:#5a3b11; border:1px solid #f2d3a6; font-size:1rem;"></div>
 
         <button type="submit" class="btn btn-submit">Submit Feedback</button>
       </form>
     </div>
   </section>
 
+  <footer class="footer-section">
+    <div class="section-content">
+      <p class="copyright-text">© 2026 Kalahari Café</p>
+      <div class="social-link-list">
+        <a href="https://www.facebook.com/randy.popota" target="_blank" rel="noreferrer noopener" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/sir_gaborekwe/" target="_blank" rel="noreferrer noopener" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com/BGaborekwe36952" target="_blank" rel="noreferrer noopener" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <p class="policy-text">
+        <a href="#" class="policy-link" data-policy="privacy">Privacy policy</a>
+        <span class="separator">•</span>
+        <a href="#" class="policy-link" data-policy="refund">Refund policy</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
+  <script>
+    document.getElementById('feedback-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name    = document.getElementById('fb-name').value.trim();
+      const email   = document.getElementById('fb-email').value.trim();
+      const rating  = document.getElementById('fb-rating').value;
+      const message = document.getElementById('fb-message').value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      let valid = true;
+
+      // Name validation
+      const nameErr = document.getElementById('fb-name-error');
+      if (!name) { nameErr.style.display = 'block'; valid = false; }
+      else { nameErr.style.display = 'none'; }
+
+      // Email validation
+      const emailErr = document.getElementById('fb-email-error');
+      if (!email || !emailRegex.test(email)) { emailErr.style.display = 'block'; valid = false; }
+      else { emailErr.style.display = 'none'; }
+
+      // Rating validation
+      const ratingErr = document.getElementById('fb-rating-error');
+      if (!rating) { ratingErr.style.display = 'block'; valid = false; }
+      else { ratingErr.style.display = 'none'; }
+
+      // Message validation
+      const msgErr = document.getElementById('fb-message-error');
+      if (!message) { msgErr.style.display = 'block'; valid = false; }
+      else { msgErr.style.display = 'none'; }
+
+      if (!valid) return;
+
+      const responseEl = document.getElementById('fb-response');
+      responseEl.textContent = `Thank you, ${name}! Your feedback has been submitted successfully.`;
+      responseEl.style.display = 'block';
+      this.reset();
+    });
+  </script>
+
+  <a href="https://wa.me/26778055268?text=Hello%20from%20Kalahari%20Café" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
 </body>
 </html>
